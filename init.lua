@@ -66,8 +66,8 @@ minetest.register_node("jailbox:invis_wall", {
 
 local nodeset = function(pos)
 	local node = minetest.get_node(pos)
-	local pickle = minetest.serialize({ name = node.name, param1 = node.param1, param2 = node.param2 })
 	local meta = minetest.get_meta(pos)
+	local pickle = minetest.serialize({ name = node.name, param1 = node.param1, param2 = node.param2 })
 	meta:set_string("old", pickle)
 	if node.name == "air" or node.name == "ignore" then
 		node.name = "jailbox:invis_wall"
@@ -94,7 +94,7 @@ local nodeunset = function(pos)
 			node.name = "default:dirt"
 		end
 	end
-	minetest.set_node(pos, node)
+	minetest.swap_node(pos, node)
 end
 
 minetest.register_chatcommand("jailbox_set",
