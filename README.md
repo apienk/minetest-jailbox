@@ -11,3 +11,6 @@ The functions are accessed through:
 Limitations:
 - Only one jailbox can exist at any time (persistent between sessions)
 - Maximum radius capped at 50 (because map chunks must be loaded in memory for `unset` to work properly)
+
+Screenshot:
+![Screenshot](screenshot.png)
